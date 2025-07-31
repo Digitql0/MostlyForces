@@ -10,11 +10,11 @@ file(GLOB_RECURSE SOURCES CONFIGURE_DEPENDS
     src/*.c
 )
 
-# Build as an executable
-add_executable(MostlyForces ${SOURCES})
-
 # Build as a static library
 add_library(MostlyForces STATIC ${SOURCES})
+
+# Build as an Executable
+add_executable(MostlyForcesApp ${SOURCES})
 
 # Include headers for anyone linking MostlyForces
 target_include_directories(MostlyForces PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
