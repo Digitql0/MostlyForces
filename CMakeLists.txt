@@ -16,5 +16,9 @@ add_library(MostlyForces STATIC ${SOURCES})
 # Build as an Executable
 add_executable(MostlyForcesApp ${SOURCES})
 
+# Include header for MostlyForcesApp
+target_include_directories(MostlyForcesApp PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include)
+target_link_libraries(MostlyForcesApp PRIVATE MostlyForces)
+
 # Include headers for anyone linking MostlyForces
 target_include_directories(MostlyForces PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
