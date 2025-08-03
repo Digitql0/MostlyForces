@@ -54,4 +54,7 @@ bool CheckCollisionRectangles(Rectangle r1, Rectangle r2);
 bool CheckCollisionPointInCircle(Vec2 point, Circle c);
 bool CheckCollisionCircleInRectangle(Circle c, Rectangle r);
 
+//Collision Response
+void ResponseCollisionCircles(Circle c1, Circle c2, Vec2& v1, Vec2& v2);
+
 #endif
