@@ -63,3 +63,10 @@ Vec2 getNormalizedVec(Vec2 vec) {
     return getScaledVec(vec, 1/getMagnitude(vec));
 }
 
+Vec2 getZeroVec2() {
+    return (Vec2){0, 0};
+}
+
+Vec3 getZeroVec3() {
+    return (Vec3){0, 0, 0};
+}

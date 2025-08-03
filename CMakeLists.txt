@@ -5,20 +5,18 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_C_STANDARD 17)
 
 # Collect sources
-file(GLOB_RECURSE SOURCES CONFIGURE_DEPENDS
+file(GLOB_RECURSE LIB_SOURCES CONFIGURE_DEPENDS
     src/*.cpp
     src/*.c
 )
+list(REMOVE_ITEM LIB_SOURCES "${CMAKE_CURRENT_SOURCE_DIR}/src/main.cpp")
 
 # Build as a static library
-add_library(MostlyForces STATIC ${SOURCES})
+add_library(MostlyForces STATIC ${LIB_SOURCES})
+target_include_directories(MostlyForces PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
+
+set(APP_SOURCES src/main.cpp)
 
 # Build as an Executable
-add_executable(MostlyForcesApp ${SOURCES})
-
-# Include header for MostlyForcesApp
-target_include_directories(MostlyForcesApp PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include)
+add_executable(MostlyForcesApp ${APP_SOURCES})
 target_link_libraries(MostlyForcesApp PRIVATE MostlyForces)
-
-# Include headers for anyone linking MostlyForces
-target_include_directories(MostlyForces PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)

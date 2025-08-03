@@ -40,6 +40,8 @@ float clampValue (float value, float min, float max);
 //Vector Math
 float getMagnitude(Vec2 vec);
 float getDistance(Vec2 p1, Vec2 p2);
+Vec2 getZeroVec2();
+Vec3 getZeroVec3();
 Vec2 getSubtractedVec(Vec2 a, Vec2 b);
 Vec2 getAddedVec(Vec2 a, Vec2 b);
 Vec2 getScaledVec(Vec2 vec, float scalar);
