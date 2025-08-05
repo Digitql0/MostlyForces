@@ -21,11 +21,11 @@ float MF_getDistance(MF_vec2 p1, MF_vec2 p2) {
   distanceArrow.x = p2.x - p1.x;
   distanceArrow.y = p2.y - p1.y;
 
-  return getMagnitude(distanceArrow);
+  return MF_getMagnitude(distanceArrow);
 }
 
 bool MF_checkCollisionCircles(MF_circle c1, MF_circle c2) {
-  return getDistance((MF_vec2){c1.x, c1.y}, (MF_vec2){c2.x, c2.y}) <
+  return MF_getDistance((MF_vec2){c1.x, c1.y}, (MF_vec2){c2.x, c2.y}) <
          c1.r + c2.r;
 }
 
@@ -41,10 +41,10 @@ bool MF_checkCollisionPointInCircle(MF_vec2 point, MF_circle c) {
 }
 
 bool MF_checkCollisionCircleInRectangle(MF_circle c, MF_rectangle r) {
-  float closestX = clampValue(c.x, r.x, r.x + r.w);
-  float closestY = clampValue(c.y, r.y, r.y + r.h);
+  float closestX = MF_clampValue(c.x, r.x, r.x + r.w);
+  float closestY = MF_clampValue(c.y, r.y, r.y + r.h);
 
-  return CheckCollisionPointInCircle((MF_vec2){closestX, closestY}, c);
+  return MF_checkCollisionPointInCircle((MF_vec2){closestX, closestY}, c);
 }
 
 MF_vec2 MF_getSubtractedVec(MF_vec2 a, MF_vec2 b) {
