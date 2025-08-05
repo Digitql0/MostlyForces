@@ -40,7 +40,7 @@ float clampValue (float value, float min, float max);
 //Vector Math
 float MF_getMagnitude(MF_vec2 vec);
 float MF_getDistance(MF_vec2 p1, MF_vec2 p2);
-MF_vec2 MF_getZerovec2();
+MF_vec2 MF_getZeroVec2();
 MF_vec3 MF_getZeroVec3();
 MF_vec2 MF_getSubtractedVec(MF_vec2 a, MF_vec2 b);
 MF_vec2 MF_getAddedVec(MF_vec2 a, MF_vec2 b);
