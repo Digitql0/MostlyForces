@@ -8,53 +8,53 @@ typedef struct {
     float y;
     float w;
     float h;
-} Rectangle;
+} MF_rectangle;
 
 typedef struct {
     float x;
     float y;
     float r;
-} Circle;
+} MF_circle;
 
 typedef struct {
     float x1;
     float y1;
     float x2;
     float y2;
-} Line;
+} MF_line;
 
 typedef struct {
     float x;
     float y;
-} Vec2;
+} MF_vec2;
 
 typedef struct {
     float x;
     float y;
     float z;
-} Vec3;
+} MF_vec3;
 
 //Utitlity
 float clampValue (float value, float min, float max);
 
 //Vector Math
-float getMagnitude(Vec2 vec);
-float getDistance(Vec2 p1, Vec2 p2);
-Vec2 getZeroVec2();
-Vec3 getZeroVec3();
-Vec2 getSubtractedVec(Vec2 a, Vec2 b);
-Vec2 getAddedVec(Vec2 a, Vec2 b);
-Vec2 getScaledVec(Vec2 vec, float scalar);
-Vec2 getNormalizedVec(Vec2 vec);
+float getMagnitude(MF_vec2 vec);
+float getDistance(MF_vec2 p1, MF_vec2 p2);
+MF_vec2 getZerovec2();
+MF_vec3 getZeroVec3();
+MF_vec2 getSubtractedVec(MF_vec2 a, MF_vec2 b);
+MF_vec2 getAddedVec(MF_vec2 a, MF_vec2 b);
+MF_vec2 getScaledVec(MF_vec2 vec, float scalar);
+MF_vec2 getNormalizedVec(MF_vec2 vec);
 
 //Collision Detection
-bool CheckCollisionPointInBox(Vec2 point, Rectangle box);
-bool CheckCollisionCircles(Circle c1, Circle c2);
-bool CheckCollisionRectangles(Rectangle r1, Rectangle r2);
-bool CheckCollisionPointInCircle(Vec2 point, Circle c);
-bool CheckCollisionCircleInRectangle(Circle c, Rectangle r);
+bool CheckCollisionPointInBox(MF_vec2 point, MF_rectangle box);
+bool CheckCollisionCircles(MF_circle c1, MF_circle c2);
+bool CheckCollisionRectangles(MF_rectangle r1, MF_rectangle r2);
+bool CheckCollisionPointInCircle(MF_vec2 point, MF_circle c);
+bool CheckCollisionCircleInRectangle(MF_circle c, MF_rectangle r);
 
 //Collision Response
-void ResponseCollisionCircles(Circle c1, Circle c2, Vec2& v1, Vec2& v2);
+void ResponseCollisionCircles(MF_circle c1, MF_circle c2, MF_vec2& v1, MF_vec2& v2);
 
 #endif
